@@ -5,7 +5,13 @@
 #
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubuntu:14.04
+
+
+
+#change sources.list
+RUN sed -i 's/archive.ubuntu.com/mirrors.163.com/' /etc/apt/sources.list
+
 
 # Install MongoDB.
 RUN \
